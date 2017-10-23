@@ -4,7 +4,7 @@ Simple way to use regex.
 ### Why use SRegex?
 Have you ever tried to replace a substring using String#replaceAll(String, String) and want to replace the regex match to a modified version of the match?
 
-With SRegex you can do so because you can actually get the results of the regex pattern and use it how every you want to use it.
+With SRegex you can do so because you can actually get the results of the regex pattern and use it how ever you want to use it.
 
 Or if you just want to test a regex pattern. You can also use SRegex to test samples that you're gonna provide or the default sample that comes with SRegex.
 When you test a regex pattern, it will print out the sample but the results are highlighted.
