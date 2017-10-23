@@ -74,7 +74,7 @@ public class SRegex {
      * @param p Pattern to initialize private field regex {@see #regex} instance with.
      * @return
      */
-    private SRegex init(Pattern p) {
+    public SRegex init(Pattern p) {
         regex = p;
         return this;
     }
@@ -85,7 +85,7 @@ public class SRegex {
      * @param p Pattern as String to initialize private field {@see #regex} regex instance with.
      * @return current instance of SRegex.
      */
-    private SRegex init(String p) {
+    public SRegex init(String p) {
         init(Pattern.compile(p));
         return this;
     }
@@ -97,7 +97,7 @@ public class SRegex {
      * @param p Pattern to use for finding substrings. This will also initialize private field {@see #regex} regex.
      * @return current instance of SRegex.
      */
-    private SRegex find(Pattern p) {
+    public SRegex find(Pattern p) {
         regex = p;
         resultsList = new ArrayList<>();
         String tempSample = sample;
@@ -236,7 +236,7 @@ public class SRegex {
 
     @Override
     public String toString() {
-        String out = "Number of resultsList: " + numResults + "\n\n" + "Results: " + getResultsList();
+        String out = "Number of results: " + numResults + "\n\n" + "Results: " + getResultsList();
         out += "\n\n" + result;
         return out;
     }
