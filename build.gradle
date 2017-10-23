@@ -6,7 +6,7 @@ plugins {
 
 mainClassName = 'us.cyrien.SRegex'
 
-version '1.0'
+version '0.0.2'
 
 sourceCompatibility = 1.8
 
