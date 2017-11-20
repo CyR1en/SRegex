@@ -1,5 +1,5 @@
 # SRegex
-An easier way to handle, test, and getting substrings.
+An easier way to handle, test, and get substrings.
 
 ### Why use SRegex?
 Have you ever tried to replace a substring using String#replaceAll(String, String) and want to replace the regex match to a modified version of the match?
