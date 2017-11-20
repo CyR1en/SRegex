@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * An easier way to handle, test, get results from a {@link String String} using Regex.
+ *
+ */
 public class SRegex {
 
     private final String DEFAULT_SAMPLE =
@@ -30,11 +34,11 @@ public class SRegex {
     private List<String> resultsList;
 
     /**
-     * Constructor that initializes {@see #regex} regex and automatically find matches
-     * using {@see find(Pattern)} find(Pattern).
+     * Constructor that initializes regex and automatically find matches
+     * using {@link SRegex#find(Pattern) find(Pattern)}.
      *
      * @param sample sample to use for SRegex methods.
-     * @param p Pattern to use as {@see #regex} regex.
+     * @param p Pattern to use as {@link #regex} regex.
      */
     public SRegex(String sample, Pattern p) {
         this.sample = sample == null ? DEFAULT_SAMPLE : sample ;
@@ -49,8 +53,8 @@ public class SRegex {
     /**
      * Constructor that only initializes the sample.
      *
-     * To initialize {@see #regex} regex. Use {@see #init(Patter)} init(Pattern),
-     * {@see #find(Pattern)} find(Pattern), or {@see #test(Patter)} test(Pattern).
+     * To initialize regex. Use {@link SRegex#init(Pattern) init(Pattern)},
+     * {@link SRegex#find(Pattern) find(Pattern)}, or {@link SRegex#test(Pattern) test(Pattern)}.
      *
      * @param sample sample to use for SRegex methods.
      */
@@ -59,20 +63,20 @@ public class SRegex {
     }
 
     /**
-     * Constructor that uses {@see #DEFAULT_SAMPLE} DEFAULT_SAMPLE as {@see #sample} sample.
+     * Constructor that uses DEFAULT_SAMPLE as sample.
      *
-     * To initialize {@see #regex} regex. Use {@see #init(Patter)} init(Pattern),
-     * {@see #find(Pattern)} find(Pattern), or {@see #test(Patter)} test(Pattern).
+     * To initialize regex. Use {@link SRegex#init(String) init(Pattern)},
+     * {@link SRegex#find(Pattern) find(Pattern)}, or {@link SRegex#test(Pattern) test(Pattern)}.
      */
     public SRegex() {
         this(null, null);
     }
 
     /**
-     * This is only used when find() {@see #find(Pattern)} or test() {@see #test(Pattern)} have not been used.
+     * This is only used when {@link SRegex#find(Pattern) find(Pattern)}, or {@link SRegex#test(Pattern) test(Pattern)} have not been used.
      *
-     * @param p Pattern to initialize private field regex {@see #regex} instance with.
-     * @return
+     * @param p Pattern to initialize private field regex instance with.
+     * @return current instance of SRegex.
      */
     public SRegex init(Pattern p) {
         regex = p;
@@ -80,9 +84,9 @@ public class SRegex {
     }
 
     /**
-     * This is only used when {@see #find(Pattern)} find() or {@see #test(Pattern)} test() have not been used.
+     * This is only used when {@link SRegex#find(Pattern) find(Pattern)}, or {@link SRegex#test(Pattern) test(Pattern)} have not been used.
      *
-     * @param p Pattern as String to initialize private field {@see #regex} regex instance with.
+     * @param p Pattern as String to initialize private field regex instance with.
      * @return current instance of SRegex.
      */
     public SRegex init(String p) {
@@ -92,9 +96,9 @@ public class SRegex {
 
     /**
      * Find substrings using regex. This will put all matched substrings to private instance of
-     * {@link java.util.List} List<String> {@see #resultList} resultList.
+     * {@link java.util.List  resultList}.
      *
-     * @param p Pattern to use for finding substrings. This will also initialize private field {@see #regex} regex.
+     * @param p Pattern to use for finding substrings. This will also initialize private field regex.
      * @return current instance of SRegex.
      */
     public SRegex find(Pattern p) {
@@ -121,10 +125,9 @@ public class SRegex {
 
     /**
      * Test regex pattern, find substrings using that regex, change the color of the results, and print the sample.
-     * This will put all matched substrings to private instance of {@link java.util.List} List<String>
-     * {@see #resultList} resultList.
+     * This will put all matched substrings to private instance of {@link java.util.List resultList}.
      *
-     * @param p Pattern to use for finding substrings. This will also initialize private field {@see #regex} regex.
+     * @param p Pattern to use for finding substrings. This will also initialize private field regex.
      */
     public void test(Pattern p) {
         String tempSample = sample;
@@ -137,8 +140,8 @@ public class SRegex {
     }
 
     /**
-     * Splits {@see #result} result with a discriminant and use the array that
-     * {@see String#split(String)} String#split(String) returns as resultList.
+     * Splits field result with a discriminant and use the array that
+     * {@link String#split(String) String#split(String)}returns as resultList.
      *
      * @param p Pattern to use as discriminant.
      * @return current instance of SRegex
@@ -150,8 +153,8 @@ public class SRegex {
     }
 
     /**
-     * Splits {@see #result} result with a discriminant and use the array that
-     * {@see String#split(String)} String#split(String) returns as resultList.
+     * Splits field result with a discriminant and use the array that
+     * {@link String#split(String) String#split(String)}returns as resultList.
      *
      * @param p String to use as discriminant.
      * @return current instance of SRegex
@@ -161,14 +164,14 @@ public class SRegex {
     }
 
     /**
-     * Replace all substrings that matches the {@see #regex} regex pattern.
+     * Replace all substrings that matches the regex pattern.
      *
-     * This can only be used if {@see #regex} regex have been initialized by
-     * {@see #SRegex(String, Pattern)} SRegex(String, Pattern) constructor,
-     * {@see #find(Patter)} find(Pattern), or {@see #test(Pattern)} test(Pattern).
+     * This can only be used if field regex have been initialized by
+     * {@link SRegex#SRegex(String, Pattern) SRegex(String, Pattern)} constructor,
+     * {@link SRegex#find(Pattern) find(Pattern)}, or {@link SRegex#test(Pattern) test(Pattern)}.
      *
      * @param replacement string to replace regex matches with.
-     * @return
+     * @return current instance of SRegex.
      */
     public SRegex replace(String replacement) {
         result = result.replaceAll(regex.pattern(), replacement);
@@ -176,12 +179,12 @@ public class SRegex {
     }
 
     /**
-     * Replace all results that have been found by {@see find(Pattern)} find(Pattern)
-     * or {@see test(Pattern)} test(Pattern) and replace resultList.
+     * Replace all results that have been found by {@link SRegex#find(Pattern) find(Pattern)}
+     * or {@link SRegex#test(Pattern) test(Pattern)} and replace resultList.
      *
-     * This can only be used if {@see #regex} regex have been initialized by
-     * {@see #SRegex(String, Pattern)} SRegex(String, Pattern) constructor,
-     * {@see #find(Patter)} find(Pattern), or {@see #test(Pattern)} test(Pattern).
+     * This can only be used if field regex have been initialized by
+     * {@link SRegex#SRegex(String, Pattern) SRegex(String, Pattern)} constructor,
+     * {@link SRegex#find(Pattern) find(Pattern)}, or {@link SRegex#test(Pattern) test(Pattern)}.
      *
      * @param replacement string to replace regex matches with.
      * @return current instance of SRegex.
@@ -194,32 +197,32 @@ public class SRegex {
     }
 
     /**
-     * Get resultList that have been set by {@see #find(Pattern)} find(Pattern),
-     * {@see #test(Pattern)} test(Pattern), {@see #split(Pattern)} split(Pattern),
-     * or {@see #replaceAllResult(String)} replaceAllResults(String).
+     * Get resultList that have been set by {@link SRegex#find(Pattern) find(Pattern)},
+     * {@link SRegex#test(Pattern) test(Pattern)}, {@link SRegex#split(Pattern) split(Pattern)},
+     * or {@link SRegex#replaceAllResults(String) replaceAllResults(String)} as {@link List List}.
      *
-     * @return {@see #resultList} resultList.
+     * @return resultList.
      */
     public List<String> getResultsList() {
         return resultsList;
     }
 
     /**
-     * Get result that have been set by {@see #(Pattern)} find(Pattern),
-     * {@see #test(Pattern)} test(Pattern), {@see #split(Pattern)} split(Pattern),
-     * or {@see #replace(String)}.
+     * Get resultList that have been set by {@link SRegex#find(Pattern) find(Pattern)},
+     * {@link SRegex#test(Pattern) test(Pattern)}, {@link SRegex#split(Pattern) split(Pattern)},
+     * or {@link SRegex#replaceAllResults(String) replaceAllResults(String)} as {@link String String}.
      *
-     * @return {@see #result} result.
+     * @return result.
      */
     public String getResult() {
         return result;
     }
 
     /**
-     * Return {@see #regex} regex Pattern that have been initialized by {@see #init(Patter)} init(Pattern),
-     * {@see #find(Pattern)} find(Pattern), or {@see #test(Patter)} test(Pattern).
+     * Return regex Pattern that have been initialized by {@link SRegex#init(Pattern) init(Patter)},
+     * {@link SRegex#find(Pattern) find(Pattern)}, or {@link SRegex#test(Pattern) test(Pattern)}.
      *
-     * @return {@see #regex} regex.
+     * @return regex pattern.
      */
     public Pattern getRegex() {
         return regex;
@@ -228,7 +231,7 @@ public class SRegex {
     /**
      * Get the default sample of SRegex.
      *
-     * @return {@see DEFAULT_SAMPLE} DEFAULT_SAMPLE.
+     * @return DEFAULT_SAMPLE.
      */
     public String getDefaultSample() {
         return DEFAULT_SAMPLE;
@@ -240,6 +243,5 @@ public class SRegex {
         out += "\n\n" + result;
         return out;
     }
-
 }
 
