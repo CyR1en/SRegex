@@ -21,6 +21,9 @@ sRegex.test(Pattern.compile("\\d{1,}[A-Za-z]{1}"));
 #### How to use SRegex on your project?
 Just add the jar file to your dependencies or clone the project and add it to your source.
 
+#### Documentation
+Javadocs can be located [here](https://www.cyrien.us/docs/sregex-docs/).
+
 Current version: 0.0.2
 
 Download: https://github.com/CyR1en/SRegex/releases/tag/0.0.2
