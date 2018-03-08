@@ -22,7 +22,7 @@ sRegex.test(Pattern.compile("\\d{1,}[A-Za-z]{1}"));
 Just add the jar file to your dependencies or clone the project and add it to your source.
 
 #### Documentation
-Javadocs can be located [here](https://github.cyrien.us/docs/sregex/).
+Javadocs can be located [here](https://github.cyr1en.com/docs/sregex/).
 
 Current version: 0.0.2
 
